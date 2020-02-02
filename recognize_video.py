@@ -61,6 +61,7 @@ time.sleep(2.0)
 fps = FPS().start()
 
 # loop over frames from the video file stream
+counter = 0
 while True:
 	# grab the frame from the threaded video stream
 	frame = vs.read()
@@ -130,7 +131,6 @@ while True:
 			result = firebase.get("/IT01", None)
 
 
-
 			if name == "Yong Teng":
 				for i in tempResult: #Check for entries captured by NFC
 					if i == '0xcb28549225L':
@@ -138,9 +138,16 @@ while True:
 						studentid = "S10198102"
 						classdetails = "IT01"
 						push = firebase.put("/IT01", "0xcb28549225L", {"Name": name, "StudentID": studentid, "Class": classdetails, "Time": timestampStr})
-						pb = Pushbullet("o.nXnlSCCZsxJVypY8kDYmkpDdwDh52RsE")
-						push = pb.push_note("Attendance have been taken", "At {}" .format(timestampStr))
-						print("Yong Teng's Entry Pushed!")
+						
+						if counter == 0:
+							pb = Pushbullet("o.nXnlSCCZsxJVypY8kDYmkpDdwDh52RsE")
+							push = pb.push_note("Attendance have been taken", "At {}" .format(timestampStr))
+							counter += 1
+							print("{}'s Entry Pushed!" .format(name))
+
+						elif counter != 0:
+							print("{}'s Notification Already Pushed!" .format(name))
+
 					
 					else:
 						print("[INFO] Checking for RFID Entry.....")
@@ -149,13 +156,20 @@ while True:
 			if name == "Wei Jie":
 				for i in tempResult: #Check for entries captured by NFC		
 					if i == '0xdb10109249L':
+						counter = 0
 						name = "Wei Jie"
 						studentid = "S10198155"
 						classdetails = "IT01"
 						push = firebase.put("/IT01", "0xdb10109249L", {"Name": name, "StudentID": studentid, "Class": classdetails, "Time": timestampStr}) #Push to result (StudentDetails)
-						pb = Pushbullet("o.VNYqP5voadrJldi4nYkac54zZdUWmXmB")
-						push = pb.push_note("Attendance have been taken", "At {}" .format(timestampStr))
-						print("Wei Jie's Entry Pushed!")
+
+						if counter == 0:
+							pb = Pushbullet("o.VNYqP5voadrJldi4nYkac54zZdUWmXmB")
+							push = pb.push_note("Attendance have been taken", "At {}" .format(timestampStr))
+							counter += 1
+							print("{} 's Entry Pushed!" .format(name))
+
+						elif counter != 0:
+							print("{} Notification Already Pushed!" .format(name))
 
 					else:
 						print("[INFO] Checking for RFID Entry.....")
