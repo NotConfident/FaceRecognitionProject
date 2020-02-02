@@ -1,1 +1,11 @@
 git clone https://github.com/NotConfident/FaceRecognitionProject.git
+
+To run the facial recognition program, cd to the "FaceRecognitionProject" directory in a terminal or command prompt (We used MacOS's terminal for this project) and enter:
+
+python3 recognize_video.py --detector face_detection_model \
+	--embedding-model openface_nn4.small2.v1.t7 \
+	--recognizer output/recognizer.pickle \
+	--le output/le.pickle
+
+Copy the entire thing, do not delete the spaces.
+
