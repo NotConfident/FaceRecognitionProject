@@ -5,7 +5,7 @@ use Kreait\Firebase\Factory;
 use Kreait\Firebase\ServiceAccount;
 
 $serviceAccount = ServiceAccount::fromJsonFile(__DIR__.'/studentdetails-99fa7-b8c8c028db78.json');
-$serviceAccount1 = ServiceAccount::fromJsonFile(__DIR__.'/notification-fd43c-firebase-adminsdk-xju3f-d9a761a7ec.json');
+$serviceAccount1 = ServiceAccount::fromJsonFile(__DIR__.'/notificationsv1-firebase-adminsdk-bzop8-aad831439f.json');
 
 $firebase = (new Factory)
     ->withServiceAccount($serviceAccount)
@@ -22,7 +22,7 @@ $remarks = (new Factory)
     // The following line is optional if the project id in your credentials file
     // is identical to the subdomain of your Firebase project. If you need it,
     // make sure to replace the URL with the URL of your project.
-    ->withDatabaseUri('https://notification-fd43c.firebaseio.com/')
+    ->withDatabaseUri('https://notificationsv1.firebaseio.com/')
     ->create();
 
 $database1 = $remarks->getDatabase();

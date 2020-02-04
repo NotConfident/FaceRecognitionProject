@@ -42,14 +42,14 @@ function funct1(){
 
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "AIzaSyC1Mke5DvoFlHxgQtp1XTu6W09AC3rCF0A",
-    authDomain: "notification-fd43c.firebaseapp.com",
-    databaseURL: "https://notification-fd43c.firebaseio.com",
-    projectId: "notification-fd43c",
-    storageBucket: "notification-fd43c.appspot.com",
-    messagingSenderId: "423240324061",
-    appId: "1:423240324061:web:2de3638b4c49555dacdc34",
-    measurementId: "G-07KS978XZD"
+    apiKey: "AIzaSyDhEAK4p7w3Wa1vH2CtYeWjvmVDzIDNaZE",
+    authDomain: "notificationsv1.firebaseapp.com",
+    databaseURL: "https://notificationsv1.firebaseio.com",
+    projectId: "notificationsv1",
+    storageBucket: "notificationsv1.appspot.com",
+    messagingSenderId: "922982867308",
+    appId: "1:922982867308:web:e89a7d00ec90ce91489349",
+    measurementId: "G-4RDELCSLYM"
   };
   // Initialize Firebase
   firebase.initializeApp(firebaseConfig);
