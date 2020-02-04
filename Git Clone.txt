@@ -9,3 +9,8 @@ python3 recognize_video.py --detector face_detection_model \
 
 Copy the entire thing, do not delete the spaces.
 
+Main Files:
+Facial Recognition Program (FaceRecognitionProject Folder): recognise_video.py, project.py
+
+WebApp (FaceRecognitionProject/CA2) studentorstaff.php, login.html, student.html, index.php, details.php
+
