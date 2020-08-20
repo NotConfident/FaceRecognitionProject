@@ -4,13 +4,13 @@
 # 	--recognizer output/recognizer.pickle \
 # 	--le output/le.pickle
 
+import imutils
 from imutils.video import VideoStream
 from imutils.video import FPS
 from firebase.firebase import FirebaseApplication
 from datetime import datetime
 import numpy as np
 import argparse
-import imutils
 import pickle
 import time
 import cv2
